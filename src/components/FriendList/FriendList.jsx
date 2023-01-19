@@ -1,8 +1,9 @@
 import FriendListItem from 'components/FriendListItem/FriendListItem';
+import { FriendsList } from './FriendList.styled';
 
 export default function FriendList({ friends }) {
   return (
-    <ul class="friend-list">
+    <FriendsList>
       {friends.map(friend => (
         <FriendListItem
           key={friend.id}
@@ -11,6 +12,6 @@ export default function FriendList({ friends }) {
           isOnline={friend.isOnline}
         />
       ))}
-    </ul>
+    </FriendsList>
   );
 }
