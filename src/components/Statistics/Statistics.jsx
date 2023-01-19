@@ -1,16 +1,30 @@
+import {
+  SectionStatistics,
+  TitleStatistics,
+  StatList,
+  ItemList,
+  LabelSpan,
+  ParcentageSpan,
+} from './Statistics.styled';
+
+function getRandomHexColor() {
+  return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+}
+
 export default function Statistics({ stats, title }) {
   return (
-    <section class="statistics">
-      {title && <h2 class="title">{title}</h2>}
+    <SectionStatistics>
+      {title && <TitleStatistics>{title}</TitleStatistics>}
 
-      <ul class="stat-list">
+      <StatList>
         {stats.map(({ id, label, percentage }) => (
-          <li key={id} class="item">
-            <span class="label">{label}</span>
-            <span class="percentage">{percentage}%</span>
-          </li>
+          <ItemList key={id} style={{ backgroundColor: getRandomHexColor() }}>
+            <LabelSpan>{label}</LabelSpan>
+            <ParcentageSpan class="percentage">{percentage}%</ParcentageSpan>
+          </ItemList>
         ))}
-      </ul>
-    </section>
+      </StatList>
+    </SectionStatistics>
   );
 }
+console.log(getRandomHexColor());
