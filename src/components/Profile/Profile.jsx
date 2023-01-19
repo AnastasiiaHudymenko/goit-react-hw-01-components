@@ -1,4 +1,14 @@
-import { Description } from './Profile.styled';
+import {
+  ProfileCard,
+  Description,
+  PhotoUser,
+  NameUser,
+  TagUserAndLocation,
+  StatsList,
+  ItemList,
+  Label,
+  QuantityStats,
+} from './Profile.styled';
 
 export default function Profile({
   username,
@@ -8,28 +18,28 @@ export default function Profile({
   stats: { followers, views, likes },
 }) {
   return (
-    <div class="profile">
-      <Description class="description">
-        <img src={avatar} alt={username} class="avatar" />
-        <p class="name">{username}</p>
-        <p class="tag">@${tag}</p>
-        <p class="location">{location}</p>
+    <ProfileCard>
+      <Description>
+        <PhotoUser src={avatar} alt={username} />
+        <NameUser>{username}</NameUser>
+        <TagUserAndLocation>@${tag}</TagUserAndLocation>
+        <TagUserAndLocation>{location}</TagUserAndLocation>
       </Description>
 
-      <ul class="stats">
-        <li>
-          <span class="label">Followers</span>
-          <span class="quantity">{followers}</span>
-        </li>
-        <li>
-          <span class="label">Views</span>
-          <span class="quantity">{views}</span>
-        </li>
-        <li>
-          <span class="label">Likes</span>
-          <span class="quantity">{likes}</span>
-        </li>
-      </ul>
-    </div>
+      <StatsList>
+        <ItemList>
+          <Label>Followers</Label>
+          <QuantityStats>{followers}</QuantityStats>
+        </ItemList>
+        <ItemList>
+          <Label>Views</Label>
+          <QuantityStats>{views}</QuantityStats>
+        </ItemList>
+        <ItemList>
+          <Label>Likes</Label>
+          <QuantityStats>{likes}</QuantityStats>
+        </ItemList>
+      </StatsList>
+    </ProfileCard>
   );
 }
