@@ -1,3 +1,5 @@
+import { Description } from './Profile.styled';
+
 export default function Profile({
   username,
   tag,
@@ -7,12 +9,12 @@ export default function Profile({
 }) {
   return (
     <div class="profile">
-      <div class="description">
+      <Description class="description">
         <img src={avatar} alt={username} class="avatar" />
         <p class="name">{username}</p>
         <p class="tag">@${tag}</p>
         <p class="location">{location}</p>
-      </div>
+      </Description>
 
       <ul class="stats">
         <li>
