@@ -31,7 +31,7 @@ export const CaptionTransaction = styled.th(
 
 export const TdTransaction = styled.td`
   padding: 10px 70px;
-  border: 1px solid grey;
+  border: 1px solid #adadad;
 `;
 
 export const Tbody = styled.tbody`

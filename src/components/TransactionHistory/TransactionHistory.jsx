@@ -8,7 +8,7 @@ import {
 
 export default function TransactionHistory({ items }) {
   return (
-    <TableTransaction class="transaction-history">
+    <TableTransaction>
       <Thead>
         <tr>
           <CaptionTransaction>Type</CaptionTransaction>
@@ -24,8 +24,11 @@ export default function TransactionHistory({ items }) {
       </Thead>
 
       <Tbody>
-        {items.map(({ id, type, amount, currency }) => (
-          <tr key={id}>
+        {items.map(({ id, type, amount, currency }, i) => (
+          <tr
+            style={{ backgroundColor: `${i % 2 === 0 ? 'white' : '#c7c6c6'}` }}
+            key={id}
+          >
             <TdTransaction>{type}</TdTransaction>
             <TdTransaction>{amount}</TdTransaction>
             <TdTransaction>{currency}</TdTransaction>
