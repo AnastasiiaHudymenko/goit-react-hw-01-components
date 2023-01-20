@@ -1,23 +1,37 @@
+import {
+  TableTransaction,
+  Thead,
+  CaptionTransaction,
+  TdTransaction,
+  Tbody,
+} from './TransactionHistory.styled';
+
 export default function TransactionHistory({ items }) {
   return (
-    <table class="transaction-history">
-      <thead>
+    <TableTransaction class="transaction-history">
+      <Thead>
         <tr>
-          <th>Type</th>
-          <th>Amount</th>
-          <th>Currency</th>
+          <CaptionTransaction>Type</CaptionTransaction>
+          <CaptionTransaction
+            paddingLeft={64}
+            borderLeft={'1px solid rgb(255 255 255 / 50%)'}
+            borderRight={'1px solid rgb(255 255 255 / 50%)'}
+          >
+            Amount
+          </CaptionTransaction>
+          <CaptionTransaction paddingLeft={43}>Currency</CaptionTransaction>
         </tr>
-      </thead>
+      </Thead>
 
-      <tbody>
+      <Tbody>
         {items.map(({ id, type, amount, currency }) => (
           <tr key={id}>
-            <td>{type}</td>
-            <td>{amount}</td>
-            <td>{currency}</td>
+            <TdTransaction>{type}</TdTransaction>
+            <TdTransaction>{amount}</TdTransaction>
+            <TdTransaction>{currency}</TdTransaction>
           </tr>
         ))}
-      </tbody>
-    </table>
+      </Tbody>
+    </TableTransaction>
   );
 }
