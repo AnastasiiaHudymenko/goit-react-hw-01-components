@@ -43,4 +43,3 @@ export default function Profile({
     </ProfileCard>
   );
 }
-console.log('hello');

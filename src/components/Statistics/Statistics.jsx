@@ -27,4 +27,3 @@ export default function Statistics({ stats, title }) {
     </SectionStatistics>
   );
 }
-console.log(getRandomHexColor());
