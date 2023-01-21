@@ -2,7 +2,8 @@ import styled from '@emotion/styled';
 
 export const ProfileCard = styled.div`
   background-color: white;
-  border-radius: 4px;
+  border-radius: 7px;
+  overflow: hidden;
   width: 380px;
   box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
 `;
@@ -37,10 +38,12 @@ export const StatsList = styled.ul`
 `;
 
 export const ItemList = styled.li`
-  padding: 33px;
+  padding: 31px;
+  border: 1px solid #a09999;
   display: flex;
   flex-direction: column;
   align-items: center;
+  box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2) inset;
 `;
 
 export const Label = styled.span`

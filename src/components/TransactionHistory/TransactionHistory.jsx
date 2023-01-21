@@ -4,6 +4,7 @@ import {
   CaptionTransaction,
   TdTransaction,
   Tbody,
+  Tr,
 } from './TransactionHistory.styled';
 
 export default function TransactionHistory({ items }) {
@@ -25,16 +26,30 @@ export default function TransactionHistory({ items }) {
 
       <Tbody>
         {items.map(({ id, type, amount, currency }, i) => (
-          <tr
-            style={{ backgroundColor: `${i % 2 === 0 ? 'white' : '#c7c6c6'}` }}
+          <Tr
+            style={{
+              backgroundColor: `${i % 2 === 0 ? 'white' : '#c7c6c6'}`,
+              boxShadow: `${
+                i % 2 === 0
+                  ? 'none'
+                  : '0px 5px 10px 2px rgba(34, 60, 80, 0.2) inset'
+              }`,
+            }}
             key={id}
           >
-            <TdTransaction>{type}</TdTransaction>
+            <TdTransaction>{makeFirstUpperCaseLetter(type)}</TdTransaction>
             <TdTransaction>{amount}</TdTransaction>
             <TdTransaction>{currency}</TdTransaction>
-          </tr>
+          </Tr>
         ))}
       </Tbody>
     </TableTransaction>
   );
+}
+
+function makeFirstUpperCaseLetter(str) {
+  return str.split('').reduce((acc, el, i, ar) => {
+    acc += `${ar[i + 1] ? ar[i + 1] : ''}`;
+    return acc;
+  }, str[0].toUpperCase());
 }
