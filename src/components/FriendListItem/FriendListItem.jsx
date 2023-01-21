@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import {
   ItemListFriend,
   StatusSpan,
@@ -15,3 +17,9 @@ export default function FriendListItem({ avatar, name, isOnline }) {
     </ItemListFriend>
   );
 }
+
+FriendListItem.propTypes = {
+  avatar: PropTypes.string,
+  name: PropTypes.string.isRequired,
+  isOnline: PropTypes.bool.isRequired,
+};

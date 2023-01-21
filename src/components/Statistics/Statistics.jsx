@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import {
   SectionStatistics,
   TitleStatistics,
@@ -27,3 +29,13 @@ export default function Statistics({ stats, title }) {
     </SectionStatistics>
   );
 }
+
+Statistics.propTypes = {
+  stats: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      label: PropTypes.string,
+      percentage: PropTypes.number,
+    })
+  ),
+};
