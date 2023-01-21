@@ -22,6 +22,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         stats={user.stats}
       />
       <Statistics stats={data} title="Upload stats" />
+      <Statistics stats={data} />
       <FriendList friends={friends} />
       <TransactionHistory items={transactions} />
     </App>
